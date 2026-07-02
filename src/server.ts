@@ -1,8 +1,14 @@
 import { FastMCP } from "fastmcp";
 import { z } from "zod";
 import * as dotenv from 'dotenv';
+import * as path from 'path';
+import { fileURLToPath } from 'url';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+process.env.DOTENV_QUIET = "true";
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const API_URL = process.env.RELAY_API_URL || "http://localhost:3000/api/mcp";
 const AUTH_TOKEN = process.env.RELAY_AUTH_TOKEN;
