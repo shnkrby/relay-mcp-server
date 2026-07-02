@@ -1,14 +1,6 @@
-
-  import 'dotenv/config';
-  import { server } from './server.js';
-
-const PORT = Number(process.env.PORT) || 3000;
+import 'dotenv/config';
+import { server } from './server.js';
 
 server.start({
-  transportType: 'httpStream',
-  httpStream: {
-    port: PORT,
-  },
+  transportType: 'stdio',
 });
-
-console.log(`MCP Server listening on port ${PORT}`);
