@@ -1,0 +1,25 @@
+{
+  "name": "relay-mcp-server",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc && node dist/index.js",
+    "start": "node dist/index.js",
+    "inspect": "mcp-inspector http://localhost:3000/mcp"
+  },
+  "dependencies": {
+    "fastmcp": "^4.3.2",
+    "zod": "^4.4.3",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "@modelcontextprotocol/inspector": "^0.22.0",
+    "@types/node": "^26.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
